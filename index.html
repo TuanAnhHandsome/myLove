@@ -355,7 +355,7 @@
 
   <!-- Màn hình nội dung -->
   <div class="screen hidden" id="mainScreen">
-    <h1>💖 Happy Anniversary 111Days 💖</h1>
+    <h1 id="dayCount">💖 Happy Anniversary 111Days 💖</h1>
     <div class="icons">
       <div class="icon" onclick="openLetterPopup()"><i class="fa-solid fa-envelope"></i></div>
       <div class="icon" onclick="openVideoPopup()"><i class="fa-solid fa-photo-film"></i></div>
@@ -526,6 +526,7 @@
       <div class="colon">:</div>
       <span><div class="number">${seconds}</div><div class="label">Seconds</div></span>
     `;
+        document.getElementById("dayCount").innerHTML = `💖 Happy Anniversary ${days} Days 💖`;
       }, 1000);
     }
 
@@ -575,6 +576,10 @@
       const bgMusic = document.getElementById("bgMusic");
       if (bgMusic) bgMusic.play().catch(() => { });
     });
+    window.addEventListener("load", () => {
+      startTimer();
+    });
+
   </script>
 
   <!-- Nhạc nền -->
@@ -583,5 +588,4 @@
     Trình duyệt không hỗ trợ audio.
   </audio>
 </body>
-
 </html>
